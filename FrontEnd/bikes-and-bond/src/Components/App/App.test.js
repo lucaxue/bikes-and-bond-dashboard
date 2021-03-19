@@ -1,8 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render } from '@testing-library/react';
+import App from './';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('button renders in app', () => {
+  const { getByText } = render(<App />);
+  const actual = getByText('Login to dashboard');
+  expect(actual).toBeInTheDocument();
 });

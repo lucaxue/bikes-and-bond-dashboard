@@ -15,11 +15,9 @@ function DashboardProfilePage() {
 
   const [recommendedId, setRecommendedId] = useState(0);
   const updateRecommendedId = () => {
-    const { max, round, random } = Math;
-
     let randomNum = 0;
     while (randomNum === recommendedId) {
-      randomNum = max(0, round(random() * missions.length - 1));
+      randomNum = Math.round(Math.random() * (missions.length - 1));
     }
     setRecommendedId(randomNum);
   };

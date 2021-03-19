@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { useThemeContext } from "../../libs/themeContext";
-import styles from "./NavBar.module.css";
+import { Link } from 'react-router-dom';
+import { useThemeContext } from '../../libs/themeContext';
+import styles from './NavBar.module.css';
 
 function NavBar() {
   const { toggleDark, isDarkMode } = useThemeContext();
@@ -20,7 +20,7 @@ function NavBar() {
           <Link className={styles.links} to={`/bikes`}>
             Bikes
           </Link>
-          <button onClick={toggleDark}> {isDarkMode ? "☀" : "🌛"}</button>
+          <button onClick={toggleDark}> {isDarkMode ? '🌞' : '🌛'}</button>
         </div>
       </div>
     </div>

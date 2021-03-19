@@ -28,7 +28,7 @@ function BikesPage() {
         />
         <div>
           {bikes.map((bike) => {
-            return <DisplayBike bike={bike} />;
+            return <DisplayBike bike={bike} key={bike.id} />;
           })}
         </div>
       </div>

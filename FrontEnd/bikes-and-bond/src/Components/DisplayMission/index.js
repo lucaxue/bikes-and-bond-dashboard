@@ -1,6 +1,6 @@
 import styles from './DisplayMission.module.css';
 
-function Mission({ mission, heading = '' }) {
+function DisplayMission({ mission, heading = '' }) {
   if (!mission) {
     return <p>Loading ...</p>;
   }
@@ -27,4 +27,4 @@ function Mission({ mission, heading = '' }) {
   );
 }
 
-export default Mission;
+export default DisplayMission;

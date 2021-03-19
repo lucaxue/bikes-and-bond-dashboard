@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useGet from '../../libs/useGet';
 import NavBar from '../NavBar';
-import Mission from '../DisplayMission';
+import DisplayMission from '../DisplayMission';
 import { useThemeContext } from '../../libs/themeContext';
 import styles from './MissionsPage.module.css';
 
@@ -28,7 +28,7 @@ function MissionsPage() {
         />
         <div>
           {missions.map((mission) => {
-            return <Mission mission={mission} />;
+            return <DisplayMission mission={mission} key={mission.id} />;
           })}
         </div>
       </div>
