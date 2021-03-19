@@ -60,7 +60,7 @@ Backend Dev
 - test Postman ✅
 - Get PUT and POST working for CRUD ✅
 - Search functionality ✅
-- CORS 
+- CORS ✅
 - Insert Function 
 
 
