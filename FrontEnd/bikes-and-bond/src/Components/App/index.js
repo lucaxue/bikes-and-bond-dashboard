@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import DashboardProfilePage from "../DashboardProfilePage";
-import BikesPage from "../BikesPage";
-import MissionsPage from "../MissionsPage";
-import { useAuth0 } from "@auth0/auth0-react";
-import { ThemeContextProvider, useThemeContext } from "../../libs/themeContext";
-import styles from "./App.module.css";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import DashboardProfilePage from '../DashboardProfilePage';
+import BikesPage from '../BikesPage';
+import MissionsPage from '../MissionsPage';
+import { useAuth0 } from '@auth0/auth0-react';
+import { ThemeContextProvider, useThemeContext } from '../../libs/themeContext';
+import styles from './App.module.css';
 
 function App() {
   const { loginWithRedirect } = useAuth0();
@@ -27,11 +27,11 @@ function App() {
               <button
                 onClick={loginWithRedirect}
                 style={{
-                  fontSize: "60px",
-                  textAlign: "center",
-                  padding: "30px",
-                  borderRadius: "10px",
-                  border: "none",
+                  fontSize: '60px',
+                  textAlign: 'center',
+                  padding: '30px',
+                  borderRadius: '10px',
+                  border: 'none',
                 }}
               >
                 Login to dashboard

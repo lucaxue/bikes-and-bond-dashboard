@@ -7,14 +7,15 @@ import styles from './MissionsPage.module.css';
 
 function MissionsPage() {
   const { theme } = useThemeContext();
-
   const [search, setSearch] = useState('');
-  let url = `https://localhost:5001/missions?search=${search}`;
-  let missions = useGet(url, [search]);
-  console.log(missions);
+
+  const url = `https://localhost:5001/missions?search=${search}`;
+  const missions = useGet(url, [search]);
+
   if (!missions) {
     return <p>loading</p>;
   }
+
   return (
     <div style={theme}>
       <NavBar />

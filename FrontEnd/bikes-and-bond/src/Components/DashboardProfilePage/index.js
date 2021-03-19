@@ -8,10 +8,21 @@ import { useThemeContext } from '../../libs/themeContext';
 import styles from './DashboardProfilePage.module.css';
 import { useState } from 'react';
 
-function DashboardProfilePage(props) {
-  const [recommendedId, setRecommendedId] = useState(0);
+function DashboardProfilePage() {
   const { user, logout, isAuthenticated, isLoading } = useAuth0();
+
   const { theme } = useThemeContext();
+
+  const [recommendedId, setRecommendedId] = useState(0);
+  const updateRecommendedId = () => {
+    const { max, round, random } = Math;
+
+    let randomNum = 0;
+    while (randomNum === recommendedId) {
+      randomNum = max(0, round(random() * missions.length - 1));
+    }
+    setRecommendedId(randomNum);
+  };
 
   const missions = useGet(`https://localhost:5001/missions`, [isAuthenticated]);
   const bikes = useGet(`https://localhost:5001/bikes`, [isAuthenticated]);
@@ -42,16 +53,10 @@ function DashboardProfilePage(props) {
               mission={missions[recommendedId]}
               heading={'Recommended Mission'}
             />
-            <button
-              onClick={() =>
-                setRecommendedId(
-                  Math.round(Math.random() * missions.length - 1)
-                )
-              }
-            >
-              Get Another Set Of Recommendation!
-            </button>
           </div>
+          <button onClick={updateRecommendedId}>
+            Get Another Set Of Recommendation!
+          </button>
         </div>
       </div>
     )

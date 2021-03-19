@@ -1,9 +1,14 @@
-import styles from "./DisplayBike.module.css";
+import styles from './DisplayBike.module.css';
 
-function DisplayBike({ bike, heading = "" }) {
+function DisplayBike({ bike, heading = '' }) {
+  if (!bike) {
+    return <p>Loading ...</p>;
+  }
+
   const { genre, title, author, colour } = bike;
+
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <h1>{heading}</h1>
       <div className={styles.flexContainer}>
         <h1>
