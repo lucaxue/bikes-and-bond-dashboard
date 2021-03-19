@@ -1,9 +1,11 @@
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import DashboardProfilePage from "../DashboardProfilePage";
-import BikesPage from "../BikesPage";
-import MissionsPage from "../MissionsPage";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import DashboardProfilePage from '../DashboardProfilePage';
+import BikesPage from '../BikesPage';
+import MissionsPage from '../MissionsPage';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
+  const { loginWithRedirect } = useAuth0();
   return (
     <Router>
       <Switch>
@@ -17,7 +19,7 @@ function App() {
           <MissionsPage />
         </Route>
         <Route path="/">
-          <Link to="/dashboard">linerijeirj</Link>
+          <button onClick={loginWithRedirect}>Login to dashboard</button>
         </Route>
       </Switch>
     </Router>
