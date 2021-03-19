@@ -1,13 +1,12 @@
-import useGet from "../../libs/useGet";
-import { Bikes, Missions } from "../../libs/sampleData";
-import { useAuth0 } from "@auth0/auth0-react";
-import DisplayBike from "../DisplayBike";
-import Profile from "../Profile";
-import DisplayMission from "../DisplayMission";
-import NavBar from "../NavBar";
-import { useThemeContext } from "../../libs/themeContext";
-import styles from "./DashboardProfilePage.module.css";
-import { useState } from "react";
+import useGet from '../../libs/useGet';
+import { useAuth0 } from '@auth0/auth0-react';
+import DisplayBike from '../DisplayBike';
+import Profile from '../Profile';
+import DisplayMission from '../DisplayMission';
+import NavBar from '../NavBar';
+import { useThemeContext } from '../../libs/themeContext';
+import styles from './DashboardProfilePage.module.css';
+import { useState } from 'react';
 
 function DashboardProfilePage(props) {
   const [recommendedId, setRecommendedId] = useState(0);
@@ -37,11 +36,11 @@ function DashboardProfilePage(props) {
           <div className={styles.recommend}>
             <DisplayBike
               bike={bikes[recommendedId]}
-              heading={"Recommended Bike"}
+              heading={'Recommended Bike'}
             />
             <DisplayMission
               mission={missions[recommendedId]}
-              heading={"Recommended Mission"}
+              heading={'Recommended Mission'}
             />
             <button
               onClick={() =>

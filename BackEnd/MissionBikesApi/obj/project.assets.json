@@ -287,19 +287,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/ellieredmayne/.nuget/packages/": {}
+    "/home/luca/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ellieredmayne/Documents/GitHub/Warriors/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj",
+      "projectUniqueName": "/home/luca/SOCprojects/week11/day5/hackathon/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj",
       "projectName": "MissionBikesApi",
-      "projectPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj",
-      "packagesPath": "/Users/ellieredmayne/.nuget/packages/",
-      "outputPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/obj/",
+      "projectPath": "/home/luca/SOCprojects/week11/day5/hackathon/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj",
+      "packagesPath": "/home/luca/.nuget/packages/",
+      "outputPath": "/home/luca/SOCprojects/week11/day5/hackathon/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ellieredmayne/.nuget/NuGet/NuGet.Config"
+        "/home/luca/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -354,7 +354,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
       }
     }
   }

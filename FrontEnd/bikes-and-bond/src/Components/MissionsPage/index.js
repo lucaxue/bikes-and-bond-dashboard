@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import useGet from "../../libs/useGet";
-import NavBar from "../NavBar";
-import Mission from "../DisplayMission";
+import React, { useState } from 'react';
+import useGet from '../../libs/useGet';
+import NavBar from '../NavBar';
+import Mission from '../DisplayMission';
+import { useThemeContext } from '../../libs/themeContext';
+import styles from './MissionsPage.module.css';
 
 function MissionsPage() {
-  // Get all the misssions - useGet (URL/missions?search${SS}, [SS])
-  // Make a search state - SS
-  // Map data missions into mission components to display
-  // Nav Bar
-  const [search, setSearch] = useState("");
+  const { theme } = useThemeContext();
+
+  const [search, setSearch] = useState('');
   let url = `https://localhost:5001/missions?search=${search}`;
   let missions = useGet(url, [search]);
   console.log(missions);
@@ -16,18 +16,20 @@ function MissionsPage() {
     return <p>loading</p>;
   }
   return (
-    <div>
-      <h1>Missions</h1>
+    <div style={theme}>
       <NavBar />
-      <input
-        className="Mission Box"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <div>
-        {missions.map((mission) => {
-          return <Mission mission={mission} />;
-        })}
+      <div className={styles.container}>
+        <h1>Missions</h1>
+        <input
+          className="Mission Box"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <div>
+          {missions.map((mission) => {
+            return <Mission mission={mission} />;
+          })}
+        </div>
       </div>
     </div>
   );
