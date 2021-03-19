@@ -65,18 +65,24 @@ Backend Dev
 
 
 FRONTEND
-  - Login with AUTH0
-  - ~~James Goosebond gmail~~ 
+  - Login with AUTH0 ✅
+  - ~~James Goosebond gmail~~ ✅
   jamesgoosebond007@gmail.com P: J4m3sG00s3B0nd007
-  - React router
-    - Dashboard/homepage/log in/weather api
+  - React router✅
+    - Dashboard/homepage/log in/weather api✅
     - Mission page
     - bike page
-    - profile page with logout
-  - CSS modules + React context
-  - Separate Theme Context File, 
-  - context: css object of the theme + toggletheme
-  - Jest test
+    - profile page with logout✅
+  - CSS modules ✅
+  - React context 🤘
+  - Separate Theme Context File, ✅
+  - context: css object of the theme + toggletheme ✅
+  - Jest test 
+  - Styling of Dashboard 
+  - Create and Styling of Bike Page 
+  - Create and Styling of Mission Page  
+  - Import Nav Bar in the right places 
+  - Use theme context on the right places 
 
 NEXT STEPS - break down frontend pages with component tree 15 mins
 
