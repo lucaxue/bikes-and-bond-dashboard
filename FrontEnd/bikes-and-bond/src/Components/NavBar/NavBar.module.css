@@ -1,0 +1,42 @@
+.navFlex {
+  display: flex;
+  max-width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.innerFlex {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.linkFlex {
+  justify-self: flex-end;
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+.links {
+  text-decoration: none;
+  color: inherit;
+}
+
+.links:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .navFlex {
+    width: 100vw;
+  }
+  .linkFlex {
+    width: 40%;
+    justify-content: space-between;
+  }
+}
