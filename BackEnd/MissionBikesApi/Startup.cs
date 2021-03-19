@@ -26,7 +26,8 @@ namespace MissionBikesApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddTransient<IRepository<Bike>, BikeRepository>();
+            services.AddTransient<IRepository<Mission>, MissionRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

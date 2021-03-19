@@ -49,6 +49,19 @@ REALIST
   - Controller and repo for both db
   - xunit test
 
+Backend Dev 
+- Controllers ✅
+- Models ✅
+- create Postgress DB - heroku ✅
+- create SQL db and insert 
+- link to User Secrets ✅
+- build Repos ✅
+- test Postman ✅
+- Get PUT and POST working for CRUD ✅
+
+
+
+
 FRONTEND
 
 - Login with AUTH0 ✅
