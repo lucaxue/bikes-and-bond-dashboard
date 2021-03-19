@@ -48,14 +48,19 @@ REALIST
   - REST API CRUD
   - Controller and repo for both db
   - xunit test
-- FRONTEND
+
+FRONTEND
   - Login with AUTH0
-  - ~~James Goosebond gmail~~
+  - ~~James Goosebond gmail~~ 
+  jamesgoosebond007@gmail.com P: J4m3sG00s3B0nd007
   - React router
-  - Dashboard/homepage/log in/weather api
-  - Mission page - bike page
-  - profile page with logout
+    - Dashboard/homepage/log in/weather api
+    - Mission page
+    - bike page
+    - profile page with logout
   - CSS modules + React context
+  - Separate Theme Context File, 
+  - context: css object of the theme + toggletheme
   - Jest test
 
 NEXT STEPS - break down frontend pages with component tree 15 mins
