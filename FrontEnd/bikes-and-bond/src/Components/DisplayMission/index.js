@@ -1,10 +1,10 @@
-import styles from './DisplayMission.module.css';
+import styles from "./DisplayMission.module.css";
 
-function Mission({ mission, heading = '' }) {
+function Mission({ mission, heading = "" }) {
   const { name, location, difficulty, task } = mission;
 
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <h1>{heading}</h1>
       <div className={styles.flexContainer}>
         <div className={styles.titleContainer}>
@@ -18,7 +18,7 @@ function Mission({ mission, heading = '' }) {
           <p>{task}</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

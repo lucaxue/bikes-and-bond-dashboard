@@ -1,0 +1,27 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.profile {
+  display: flex;
+  max-width: 1000px;
+  width: 700px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.image {
+  width: 100px;
+}
+.button {
+  max-height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
