@@ -17,8 +17,12 @@ public class MissionController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Mission> GetAll()
+    public IEnumerable<Mission> GetAll(string search)
     {
+        if (search != null){
+                    return _missionRepository.Search(search);
+        }
+
         return _missionRepository.GetAll();
     }
 

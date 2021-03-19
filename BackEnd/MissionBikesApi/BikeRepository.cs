@@ -9,6 +9,13 @@ public class BikeRepository : BaseRepository, IRepository<Bike>
 
     public BikeRepository(IConfiguration configuration) : base(configuration) { }
 
+    public IEnumerable<Bike> Search(string search)
+    {
+        using var connection = CreateConnection();
+        IEnumerable<Bike> bikes = connection.Query<Bike>("SELECT * FROM Bikes WHERE Genre ILIKE @Search OR Author ILIKE @Search OR Title ILIKE @Search OR Color ILIKE @Search;", new { Search = $"%{search}%" });
+        return bikes;
+    }
+
     public IEnumerable<Bike> GetAll()
     {
         using var connection = CreateConnection();

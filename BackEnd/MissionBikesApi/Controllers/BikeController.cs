@@ -17,10 +17,16 @@ public class BikeController : ControllerBase
     }
 
     [HttpGet] 
-    public IEnumerable<Bike> GetAll()
+    public IEnumerable<Bike> GetAll(string search)
     {
+        if (search != null){
+                    return _bikeRepository.Search(search);
+        }
+
         return _bikeRepository.GetAll();
     }
+
+
 
     [HttpGet("{rand}")] //reccomeneded 
     public async Task<IActionResult> Get(int rand) //bike id   - can we randomise in SQL 
