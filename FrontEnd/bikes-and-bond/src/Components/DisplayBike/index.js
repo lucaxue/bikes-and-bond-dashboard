@@ -1,12 +1,15 @@
+import styles from "./DisplayBike.module.css";
+
 function DisplayBike({ bike }) {
-  const { Id, Genre, Title, Author, Colour } = bike;
+  const { genre, title, author, colour } = bike;
   return (
-    <div>
+    <div className={styles.flexContainer}>
       <h1>
-        {Id}: {Title} by {Author}
+        {title} by {author}
       </h1>
-      <h2>Genre: {Genre}</h2>
-      <p>{Colour}</p>
+      <p className={styles.image}>🚲</p>
+      <h2>Genre: {genre}</h2>
+      <p>{colour}</p>
     </div>
   );
 }
