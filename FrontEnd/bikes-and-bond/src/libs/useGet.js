@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 function useGet(url, dependencies = []) {
   const [fetchedData, setFetchedData] = useState(null);
@@ -10,6 +10,7 @@ function useGet(url, dependencies = []) {
       setFetchedData(data);
     };
     getData();
+    // eslint-disable-next-line
   }, [...dependencies, url]);
 
   return fetchedData;

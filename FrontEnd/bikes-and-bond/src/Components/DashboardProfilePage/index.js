@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
 import useGet from '../../libs/useGet';
 import { Bikes, Missions } from '../../libs/sampleData';
 import { useAuth0 } from '@auth0/auth0-react';
-import DisplayRecommendedItem from '../DiplayRecommendedItem';
+import DisplayBike from '../DisplayBike';
+import Profile from '../Profile';
 
 function DashboardProfilePage(props) {
-  const { logout, user, isAuthenticated, isLoading } = useAuth0();
+  const { user, logout, isAuthenticated, isLoading } = useAuth0();
 
   const data = useGet('https://api.kanye.rest');
   console.log(data);
@@ -19,20 +19,19 @@ function DashboardProfilePage(props) {
     isAuthenticated && (
       <>
         <div>
-          <p>SPY DASHBOARD 🕵️‍♀️</p>
           <nav>
+            <p>SPY DASHBOARD 🕵️‍♀️</p>
             <Link to={`/missions`}>Missions</Link>
             <Link to={`/bikes`}>Bikes</Link>
           </nav>
         </div>
-        <h2>{user.name}</h2>
-        <p>Email: {user.email}</p>
-        <img src="https://bit.ly/3lvYepD" alt={user.name} />
-        <button onClick={() => logout({ returnTo: window.location.origin })}>
-          Logout
-        </button>
-        <DisplayRecommendedItem items={Bikes} variant={'bike'} />
-        <DisplayRecommendedItem items={Missions} variant={'mission'} />
+        <Profile
+          name={user.name}
+          picture={user.picture}
+          email={user.email}
+          logout={logout}
+        />
+        <DisplayBike bike={Bikes[0]} />
       </>
     )
   );
