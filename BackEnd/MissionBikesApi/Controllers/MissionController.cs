@@ -39,40 +39,40 @@ public class MissionController : ControllerBase
     }
 
 
-    [HttpPost]
-    public async Task<IActionResult> Insert([FromBody] Mission mission)
-    {
-        try
-        {
-            Console.WriteLine(ModelState.IsValid);
-            var insertMission = await _missionRepository.Insert(new Mission { Mission = mission.Mission});
-            return Ok(insertMission);
+    // [HttpPost]
+    // public async Task<IActionResult> Insert([FromBody] Mission mission)
+    // {
+    //     try
+    //     {
+    //         Console.WriteLine(ModelState.IsValid);
+    //         var insertMission = await _missionRepository.Insert(new Mission { Mission = mission.Mission});
+    //         return Ok(insertMission);
 
-        }
-        catch (Exception error)
-        {
-            Console.WriteLine(error.Message);
-            Console.WriteLine(error.StackTrace);
-            //handle exception
-            return BadRequest();
-        }
-    }
+    //     }
+    //     catch (Exception error)
+    //     {
+    //         Console.WriteLine(error.Message);
+    //         Console.WriteLine(error.StackTrace);
+    //         //handle exception
+    //         return BadRequest();
+    //     }
+    // }
 
     //POTENTIAL STRETCH GOAL
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(long id, [FromBody] Mission mission)
-    {
-        try
-        {
-            var editMission = await _missionRepository.Update(new Mission { Id = id, Title = Mission.Title, Artist = Mission.Artist, MissionLengthCode = Mission.MissionLengthCode, Link = Mission.Link, SuggestedBy = Mission.SuggestedBy });
-            return Ok(editMission);
-        }
-        catch (Exception error)
-        {
-            Console.WriteLine(error.Message);
-            Console.WriteLine(error.StackTrace);
-            //handle exception
-            return NotFound("no mission updated");
-        }
-    }
+    // [HttpPut("{id}")]
+    // public async Task<IActionResult> Update(long id, [FromBody] Mission mission)
+    // {
+    //     try
+    //     {
+    //         var editMission = await _missionRepository.Update(new Mission { Id = id, Title = Mission.Title, Artist = Mission.Artist, MissionLengthCode = Mission.MissionLengthCode, Link = Mission.Link, SuggestedBy = Mission.SuggestedBy });
+    //         return Ok(editMission);
+    //     }
+    //     catch (Exception error)
+    //     {
+    //         Console.WriteLine(error.Message);
+    //         Console.WriteLine(error.StackTrace);
+    //         //handle exception
+    //         return NotFound("no mission updated");
+    //     }
+    // }
 }

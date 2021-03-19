@@ -37,40 +37,40 @@ public class BikeController : ControllerBase
         }
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Insert([FromBody] Bike bike)
-    {
-        try
-        {
-            Console.WriteLine(ModelState.IsValid);
-            var insertBike = await _bikeRepository.Insert(new Bike { Bike = bike.Bike });
-            return Ok(insertBike);
+    // [HttpPost]
+    // public async Task<IActionResult> Insert([FromBody] Bike bike)
+    // {
+    //     try
+    //     {
+    //         Console.WriteLine(ModelState.IsValid);
+    //         var insertBike = await _bikeRepository.Insert(new Bike { Bike = bike.Bike });
+    //         return Ok(insertBike);
 
-        }
-        catch (Exception error)
-        {
-            Console.WriteLine(error.Message);
-            Console.WriteLine(error.StackTrace);
-            //handle exception
-            return BadRequest();
-        }
-    }
+    //     }
+    //     catch (Exception error)
+    //     {
+    //         Console.WriteLine(error.Message);
+    //         Console.WriteLine(error.StackTrace);
+    //         //handle exception
+    //         return BadRequest();
+    //     }
+    // }
 
     //POTENTIAL STRETCH GOAL//
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(long id, [FromBody] Bike bike)
-    {
-        try
-        {
-            var editBike = await _bikeRepository.Update(new Bike { Bike = bike.Bike });
-            return Ok(editBike);
-        }
-        catch (Exception error)
-        {
-            Console.WriteLine(error.Message);
-            Console.WriteLine(error.StackTrace);
-            //handle exception
-            return NotFound("no bike updated");
-        }
-    }
+    // [HttpPut("{id}")]
+    // public async Task<IActionResult> Update(long id, [FromBody] Bike bike)
+    // {
+    //     try
+    //     {
+    //         var editBike = await _bikeRepository.Update(new Bike { Bike = bike.Bike });
+    //         return Ok(editBike);
+    //     }
+    //     catch (Exception error)
+    //     {
+    //         Console.WriteLine(error.Message);
+    //         Console.WriteLine(error.StackTrace);
+    //         //handle exception
+    //         return NotFound("no bike updated");
+    //     }
+    // }
 }
