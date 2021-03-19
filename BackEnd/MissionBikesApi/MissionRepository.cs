@@ -9,6 +9,12 @@ public class MissionRepository : BaseRepository, IRepository<Mission>
 
     public MissionRepository(IConfiguration configuration) : base(configuration) { }
 
+    public IEnumerable<Mission> Search(string search)
+    {
+        using var connection = CreateConnection();
+        IEnumerable<Mission> missions = connection.Query<Mission>("SELECT * FROM Missions WHERE Location ILIKE @Search OR Villain ILIKE @Search OR Difficulty ILIKE @Search;", new { Search = $"%{search}%" });
+        return missions;
+    }
     public IEnumerable<Mission> GetAll()
     {
         using var connection = CreateConnection();

@@ -1,42 +1,37 @@
 export const Bikes = [
   {
-    Id: 0,
-    Genre: 'BMX',
-    Title: 'Jeff',
-    Author: 'Mr vanMoof',
-    Colour: 'blue',
+    id: 1,
+    genre: "Unicycle",
+    author: "Mr Trek",
+    color: "Red",
+    title: "Red-Roller",
   },
   {
-    Id: 1,
-    Genre: 'Road',
-    Title: 'Jobson',
-    Author: 'Miss Bianchi',
-    Colour: 'purple',
-  },
-  {
-    Id: 2,
-    Genre: 'Mountain',
-    Title: 'Bobertson',
-    Author: 'Mr Boardman',
-    Colour: 'green',
+    id: 2,
+    genre: "Penny Farthing",
+    author: "Ms Raleigh ",
+    color: "Black",
+    title: "Tally Ho",
   },
 ];
 
 export const Missions = [
   {
-    Id: 0,
-    Name: 'Eat sausages',
-    Location: 'The Sausage Shop',
-    Task: 'Eat all of the sausages from the shop, in under 12s.',
-    Difficulty: 7,
-    Villain: 'Jefferson - The Shop Owner',
+    id: 1,
+    name: "Panic in Paris",
+    location: "Paris",
+    difficulty: 3,
+    task:
+      "We’ve gathered intel that there’s a plot to steal the Eiffel Tower, get down there and stop it before it’s too late",
+    villain: "Mr VanMoof",
   },
   {
-    Id: 1,
-    Name: 'Eat Eggs',
-    Location: 'The Egg Shop',
-    Task: 'Eat all of the eggs from the shop, in under 14s.',
-    Difficulty: 6,
-    Villain: 'Elizabob - The Manager',
+    id: 2,
+    name: "Brawl in Brussels requires your Muscles",
+    location: "Brussels",
+    difficulty: 1,
+    task:
+      "The Belgium mob are on the loose again and have pulled off another jewellery hiest. However this time time they have let their guard down and are picniccing on the river side near St Bartholomews, all you need to do is go there and round them up for questioning!",
+    villain: "Master Kermit",
   },
 ];
