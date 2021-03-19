@@ -1,7 +1,11 @@
 import { useState, createContext, useContext } from 'react';
 import { theme } from './theme';
 
-const ThemeContext = createContext(null);
+const ThemeContext = createContext({
+  theme: null,
+  toggleDark: null,
+  isDarkMode: null,
+});
 
 export function ThemeContextProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -13,6 +17,7 @@ export function ThemeContextProvider({ children }) {
         toggleDark: () => {
           setIsDarkMode(!isDarkMode);
         },
+        isDarkMode: isDarkMode,
       }}
     >
       {children}

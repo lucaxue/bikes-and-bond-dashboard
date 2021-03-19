@@ -1,13 +1,15 @@
-import { Link } from 'react-router-dom';
 import useGet from '../../libs/useGet';
 import { Bikes, Missions } from '../../libs/sampleData';
 import { useAuth0 } from '@auth0/auth0-react';
 import DisplayBike from '../DisplayBike';
 import Profile from '../Profile';
 import DisplayMission from '../DisplayMission';
+import NavBar from '../NavBar';
+import { useThemeContext } from '../../libs/themeContext';
 
 function DashboardProfilePage(props) {
   const { user, logout, isAuthenticated, isLoading } = useAuth0();
+  const { theme } = useThemeContext();
 
   //const data = useGet('https://api.kanye.rest');
   //console.log(data);
@@ -18,8 +20,8 @@ function DashboardProfilePage(props) {
 
   return (
     isAuthenticated && (
-      <>
-        
+      <div style={theme}>
+        <NavBar />
         <Profile
           name={user.name}
           picture={user.picture}
@@ -28,7 +30,7 @@ function DashboardProfilePage(props) {
         />
         <DisplayBike bike={Bikes[0]} heading={'Recommended Bike'} />
         <DisplayMission mission={Missions[0]} heading={'Recommended Mission'} />
-      </>
+      </div>
     )
   );
 }
