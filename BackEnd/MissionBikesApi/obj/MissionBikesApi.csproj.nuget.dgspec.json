@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/craigfarrell/Desktop/SoC/Week11/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj": {}
+    "/Users/ellieredmayne/Documents/GitHub/Warriors/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj": {}
   },
   "projects": {
-    "/Users/craigfarrell/Desktop/SoC/Week11/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj": {
+    "/Users/ellieredmayne/Documents/GitHub/Warriors/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/craigfarrell/Desktop/SoC/Week11/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj",
+        "projectUniqueName": "/Users/ellieredmayne/Documents/GitHub/Warriors/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj",
         "projectName": "MissionBikesApi",
-        "projectPath": "/Users/craigfarrell/Desktop/SoC/Week11/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj",
-        "packagesPath": "/Users/craigfarrell/.nuget/packages/",
-        "outputPath": "/Users/craigfarrell/Desktop/SoC/Week11/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/obj/",
+        "projectPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/MissionBikesApi.csproj",
+        "packagesPath": "/Users/ellieredmayne/.nuget/packages/",
+        "outputPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/w11d5_levelupathon_hackathon-c-e-l-l_11/BackEnd/MissionBikesApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/craigfarrell/.nuget/NuGet/NuGet.Config"
+          "/Users/ellieredmayne/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }
