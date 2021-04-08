@@ -1,82 +1,92 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using System.Numerics;
 
 
 [ApiController]
-[Route("missions")]
+[Route("[controller]s")]
 public class MissionController : ControllerBase
 {
-    private readonly IRepository<Mission> _missionRepository;
+  private readonly IRepository<Mission> _missionRepository;
 
-    public MissionController(IRepository<Mission> missionRepository)
+  public MissionController(IRepository<Mission> missionRepository)
+  {
+    _missionRepository = missionRepository;
+  }
+
+  [HttpGet]
+  public async Task<IActionResult> GetAll(string search = "", int limit = 100, int page = 1)
+  {
+    try
     {
-        _missionRepository = missionRepository;
+      var missionsResult = await _missionRepository.Search(search, limit, page);
+      return Ok(missionsResult);
     }
-
-    [HttpGet]
-    public IEnumerable<Mission> GetAll(string search)
+    catch (Exception)
     {
-        if (search != null){
-                    return _missionRepository.Search(search);
-        }
-
-        return _missionRepository.GetAll();
+      if (limit < 0 || page <= 0)
+      {
+        return BadRequest($"Sorry, the {(page <= 0 ? "page" : "limit")} entered is not valid.\nTry entering a positive number.");
+      }
+      return NotFound("Sorry, could not get any missions from the repository.\nPlease try another request.");
     }
+  }
 
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> Get(int id)
+  [HttpGet("{id}")]
+  public async Task<IActionResult> Get(long id)
+  {
+    try
     {
-        try
-        {
-            var mission = await _missionRepository.Get(id);
-            return Ok(mission);
-        }
-        catch (Exception)
-        {
-            //handle exception
-            return NotFound();
-        }
+      var returnedMission = await _missionRepository.Get(id);
+      return Ok(returnedMission);
     }
+    catch (Exception)
+    {
+      return NotFound($"Sorry, mission of id {id} cannot be fetched, since it does not exist.\nAre you sure the id is correct?");
+    }
+  }
 
+  [HttpDelete("{id}")]
+  public IActionResult Delete(long id)
+  {
+    try
+    {
+      _missionRepository.Delete(id);
+      return Ok();
+    }
+    catch (Exception)
+    {
+      return BadRequest($"Sorry, mission of id {id} cannot be deleted, since it does not exit.\nAre you sure the id is correct?");
+    }
+  }
 
-    // [HttpPost]
-    // public async Task<IActionResult> Insert([FromBody] Mission mission)
-    // {
-    //     try
-    //     {
-    //         Console.WriteLine(ModelState.IsValid);
-    //         var insertMission = await _missionRepository.Insert(new Mission { Mission = mission.Mission});
-    //         return Ok(insertMission);
+  [HttpPut("{id}")]
+  public async Task<IActionResult> Update(long id, [FromBody] Mission mission)
+  {
+    try
+    {
+      mission.Id = id;
+      var updatedMission = await _missionRepository.Update(mission);
+      return Ok(updatedMission);
+    }
+    catch (Exception)
+    {
+      return BadRequest($"Sorry, mission of id {id} cannot be updated, since it does not exist.\nAre you sure the id is correct?");
+    }
+  }
 
-    //     }
-    //     catch (Exception error)
-    //     {
-    //         Console.WriteLine(error.Message);
-    //         Console.WriteLine(error.StackTrace);
-    //         //handle exception
-    //         return BadRequest();
-    //     }
-    // }
-
-    //POTENTIAL STRETCH GOAL
-    // [HttpPut("{id}")]
-    // public async Task<IActionResult> Update(long id, [FromBody] Mission mission)
-    // {
-    //     try
-    //     {
-    //         var editMission = await _missionRepository.Update(new Mission { Id = id, Title = Mission.Title, Artist = Mission.Artist, MissionLengthCode = Mission.MissionLengthCode, Link = Mission.Link, SuggestedBy = Mission.SuggestedBy });
-    //         return Ok(editMission);
-    //     }
-    //     catch (Exception error)
-    //     {
-    //         Console.WriteLine(error.Message);
-    //         Console.WriteLine(error.StackTrace);
-    //         //handle exception
-    //         return NotFound("no mission updated");
-    //     }
-    // }
+  [HttpPost]
+  public async Task<IActionResult> Insert([FromBody] Mission mission)
+  {
+    try
+    {
+      var insertedMission = await _missionRepository.Insert(mission);
+      return Created($"/missions/{insertedMission.Id}", insertedMission);
+    }
+    catch (Exception)
+    {
+      return BadRequest($"Sorry, cannot insert new mission.\nAre you sure the mission is valid?");
+    }
+  }
 }

@@ -1,10 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 public class Mission
 {
-    public long? Id { get; set; }
-    public string Name { get; set; }
-    public string Location { get; set; }
-    public int Difficulty { get; set; }
-    public string Task { get; set; }
-    public string Villain { get; set; } // random names including Bike Authors 
+  public long? Id { get; set; }
+  [Required]
+  public string Name { get; set; }
+  [Required]
+  public string Location { get; set; }
+  [Required]
+  public int Difficulty { get; set; }
+  [Required]
+  public string Task { get; set; }
+  [Required]
+  public string Villain { get; set; }
 }
