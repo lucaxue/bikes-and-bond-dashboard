@@ -41,7 +41,7 @@ public class MissionRepository : BaseRepository, IRepository<Mission>
   public async Task<IEnumerable<Mission>> Search(string query, int limit, int page)
   {
     using var connection = CreateConnection();
-    return await connection.QueryAsync<Mission>("SELECT * FROM Missions WHERE Name ILIKE @Query OR Location ILIKE @Query OR Difficulty ILIKE @Query OR Task ILIKE @Query OR Villain ILIKE @Query LIMIT @Limit OFFSET @Offset;", new { Query = $"%{query}%", Limit = limit, Offset = (page - 1) * limit });
+    return await connection.QueryAsync<Mission>("SELECT * FROM Missions WHERE Name ILIKE @Query OR Location ILIKE @Query OR Difficulty::TEXT ILIKE @Query OR Task ILIKE @Query OR Villain ILIKE @Query LIMIT @Limit OFFSET @Offset;", new { Query = $"%{query}%", Limit = limit, Offset = (page - 1) * limit });
   }
 }
 
